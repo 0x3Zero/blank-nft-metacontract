@@ -1,0 +1,17 @@
+modules_dir = "artifacts/"
+
+[[module]]
+    name = "evm_rpc"
+    mem_pages_count = 100
+    logger_enabled = true
+
+    [module.mounted_binaries]
+    curl = "/usr/bin/curl"
+
+[[module]]
+    name = "meta_contract"
+    mem_pages_count = 100
+    logger_enabled = true
+
+    [module.mounted_binaries]
+    ipfs = "/usr/bin/ipfs"
