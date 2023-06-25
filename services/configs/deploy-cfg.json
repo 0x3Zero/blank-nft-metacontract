@@ -1,0 +1,22 @@
+{
+  "meta_contract": {
+    "modules": [
+      {
+        "name": "evm_rpc",
+        "path": "artifacts/evm_rpc.wasm",
+        "logger_enabled": true,
+        "mem_page_count": 100,
+        "mounted_binaries": [["curl", "/usr/bin/curl"]]
+      },
+      {
+        "name": "meta_contract",
+        "path": "artifacts/meta_contract.wasm",
+        "mounted_binaries": [
+          ["ipfs", "/usr/bin/ipfs"]
+        ],
+        "logger_enabled": true,
+        "mem_page_count": 100
+      }
+    ]
+  }
+}
