@@ -38,8 +38,8 @@ pub fn on_execute(
 
       if is_token_owner(transaction.public_key.clone(), transaction.token_id.clone()) {
         finals.push(FinalMetadata {
-          public_key: transaction.public_key,
-          alias: transaction.alias,
+          public_key: contract.public_key,
+          alias: "data".to_string(),
           content: transaction.data,
         });
 
@@ -70,22 +70,21 @@ pub fn on_mint(contract: MetaContract, data_key: String, token_id: String, data:
     let mut finals: Vec<FinalMetadata> = vec![];
 
     if !token_id.is_empty() {
-      let token_owner = get_token_owner(token_id.clone());
 
       finals.push(FinalMetadata {
-        public_key: token_owner.clone(),
+        public_key: contract.public_key.clone(),
         alias: "name".to_string(),
         content: name,
       });
   
       finals.push(FinalMetadata {
-          public_key: token_owner.clone(),
+          public_key: contract.public_key.clone(),
           alias: "description".to_string(),
           content: "Blank NFT description".to_string(),
       });
   
       finals.push(FinalMetadata {
-          public_key: token_owner.clone(),
+          public_key: contract.public_key.clone(),
           alias: "image".to_string(),
           content: "ipfs://".to_string(),
       });
