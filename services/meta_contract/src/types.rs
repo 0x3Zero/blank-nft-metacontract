@@ -17,6 +17,7 @@ pub struct FinalMetadata {
 #[marine]
 #[derive(Debug, Clone)]
 pub struct Metadata {
+    pub hash: String,
     pub data_key: String,
     pub alias: String,
     pub cid: String,
@@ -41,6 +42,7 @@ pub struct Transaction {
     pub method: String,
     pub error_text: String,
     pub token_id: String,
+    pub version: i64
 }
 
 #[marine]
