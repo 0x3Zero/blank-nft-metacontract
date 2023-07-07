@@ -16,6 +16,7 @@ data MetaContractResult:
   error_string: string
 
 data Metadata:
+  hash: string
   data_key: string
   alias: string
   cid: string
@@ -37,6 +38,7 @@ data Transaction:
   method: string
   error_text: string
   token_id: string
+  version: i64
 
 service MetaContract("meta_contract"):
   on_clone() -> bool
